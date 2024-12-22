@@ -36,7 +36,9 @@ const vowelCounter = function (array) {
   return array.reduce(vowelAccumulator, 0);
 };
 
-const countVowelsOf = function (strings) {
+const countVowelsOf = function ([...strings]) {
+  console.log(strings);
+
   const s = strings.map(createStringSplitter(''));
   return s.map(vowelCounter);
 };
@@ -45,7 +47,7 @@ const inputStrings = ["apple", "banana", "grape"];
 console.log(countVowelsOf(inputStrings));
 
 
-console.log = function () { };
+// console.log = function () { };
 
 // -----------------------------------------------------------------------------
 
@@ -128,7 +130,7 @@ console.log(negatedBooleansOf(booleans));
 
 
 const convertToArray = function (string) {
-  return string.split('').map(duplicateStr).join('');
+  return [...string].map(duplicateStr).join('');
 };
 
 const doubleLettersOf = function (strings) {
@@ -141,7 +143,9 @@ console.log(doubleLettersOf(wordsToDouble));
 // -----------------------------------------------------------------------------
 
 const reverseWordsMapper = function (word) {
-  return word.split("").reverse().join("");
+  console.log();
+
+  return [...word].reverse().join("");
 };
 
 const reversedStringsOf = function (strings) {
