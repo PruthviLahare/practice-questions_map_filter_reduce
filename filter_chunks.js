@@ -1,17 +1,13 @@
 // active users [{username: "alice", active: true}, {username: "bob", active: 
 //false}] => [{username: "alice", active: true}]
 
-const activeUsers = function (user) {
-  return user.active;
-};
-
 const filterActiveUsers = function (users) {
-  return users.filter(activeUsers);
+  return users.filter((user) => user.active);
 };
 
 const users = [{ username: "alice", active: true }, { username: "bob", active: false }];
-console.log(filterActiveUsers(users));
 
+console.log(filterActiveUsers(users));
 
 console.log = function () { };
 
