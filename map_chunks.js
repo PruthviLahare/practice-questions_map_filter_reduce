@@ -27,7 +27,7 @@ const vowelCounter = function (array) {
 
   const vowelAccumulator = function (count, char) {
     if (vowels.includes(char)) {
-      return count = count + 1;
+      return count + 1;
     }
 
     return count;
