@@ -26,11 +26,7 @@ const vowelCounter = function (array) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
 
   const vowelAccumulator = function (count, char) {
-    if (vowels.includes(char)) {
-      return count + 1;
-    }
-
-    return count;
+    return vowels.includes(char) ? count + 1 : count;
   };
 
   return array.reduce(vowelAccumulator, 0);
