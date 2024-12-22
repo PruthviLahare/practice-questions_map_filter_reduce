@@ -4,10 +4,17 @@ const isGreaterThan = function (num1) {
   };
 };
 
-// books with more than 200 pages [{title: "Book 1", pages: 150}, {title: "Book 2", pages: 250}] => [{title: "Book 2", pages: 250}]
-const filterLongBooks = function (books) { };
+const filterLongBooks = function (books) {
+  const isGreaterThan200 = isGreaterThan(200);
+
+  return books.filter(function (books) {
+    return isGreaterThan200(books.pages);
+  });
+};
 
 const books = [{ title: "Book 1", pages: 150 }, { title: "Book 2", pages: 250 }];
+console.log(filterLongBooks(books));
+
 
 // -----------------------------------------------------------------------------
 
