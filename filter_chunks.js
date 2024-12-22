@@ -1,20 +1,23 @@
+console.log = function () { };
 
+// -----------------------------------------------------------------------------
 
-// people older than 30 [{name: "Alice", age: 25}, {name: "Bob", age: 35}] => 
-// [{name: "Bob", age: 35}]
-
-const peopleOlderThan30 = function (people) {
-  return people.age > 30;
+const isGreaterThan = function (num1) {
+  return function (num2) {
+    return num1 < num2;
+  };
 };
 
 const filterAdults = function (people) {
-  return people.filter(peopleOlderThan30);
+  const isGreaterThan30 = isGreaterThan(30);
+
+  return people.filter(function (person) {
+    return isGreaterThan30(person.age);
+  });
 };
 
 const people = [{ name: "Alice", age: 25 }, { name: "Bob", age: 35 }];
 console.log(filterAdults(people));
-
-console.log = function () { };
 
 // -----------------------------------------------------------------------------
 
