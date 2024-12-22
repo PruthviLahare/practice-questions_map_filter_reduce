@@ -1,4 +1,22 @@
-// words with more than 5 letters ["apple", "banana", "kiwi", "grape"] => ["banana"]
+
+
+// people older than 30 [{name: "Alice", age: 25}, {name: "Bob", age: 35}] => 
+// [{name: "Bob", age: 35}]
+
+const peopleOlderThan30 = function (people) {
+  return people.age > 30;
+};
+
+const filterAdults = function (people) {
+  return people.filter(peopleOlderThan30);
+};
+
+const people = [{ name: "Alice", age: 25 }, { name: "Bob", age: 35 }];
+console.log(filterAdults(people));
+
+console.log = function () { };
+
+// -----------------------------------------------------------------------------
 
 const lengthGreaterThan5 = function (word) {
   return word.length > 5;
@@ -11,11 +29,7 @@ const filterLongWords = function (words) {
 const words = ["apple", "banana", "kiwi", "grape"];
 console.log(filterLongWords(words));
 
-
-console.log = function () { };
 // -----------------------------------------------------------------------------
-
-// even numbers [1, 2, 3, 4, 5] => [2, 4]
 
 const isEven = function (num) {
   return (num & 1) === 0;
