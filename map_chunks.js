@@ -46,7 +46,6 @@ const countVowelsOf = function ([...strings]) {
 const inputStrings = ["apple", "banana", "grape"];
 console.log(countVowelsOf(inputStrings));
 
-
 // console.log = function () { };
 
 // -----------------------------------------------------------------------------
@@ -126,8 +125,6 @@ const booleans = [true, false, true];
 console.log(negatedBooleansOf(booleans));
 
 // -----------------------------------------------------------------------------
-
-
 
 const convertToArray = function (string) {
   return [...string].map(duplicateStr).join('');
@@ -220,7 +217,3 @@ const squaresOf = function (numbers) {
 
 const numbers = [1, 2, 3];
 console.log(squaresOf(numbers));
-
-
-
-
