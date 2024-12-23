@@ -1,4 +1,18 @@
+// orders placed in the last 30 days [{orderDate: "2024-11-01"}, {orderDate: "2024-12-01"}] => [{orderDate: "2024-12-01"}]
+const filterRecentOrders = function (orders) { };
+
 console.log = function () { };
+// -----------------------------------------------------------------------------
+
+const filterInStockProducts = function (products) {
+  return products.filter(function (product) {
+    return product.inStock;
+  });
+};
+
+const products = [{ product: "apple", inStock: true }, { product: "banana", inStock: false }];
+
+console.log(filterInStockProducts(products));
 
 // -----------------------------------------------------------------------------
 
@@ -10,7 +24,6 @@ const filterHighGrades = function (students) {
 
 const students = [{ name: "John", grade: 75 }, { name: "Jane", grade: 85 }];
 console.log(filterHighGrades(students));
-
 
 // -----------------------------------------------------------------------------
 
@@ -31,10 +44,8 @@ const filterIncompleteProfiles = function (users) {
   });
 };
 
-
 const usersData = [{ username: "alice", profileComplete: true }, { username: "bob", profileComplete: false }];
 console.log(filterIncompleteProfiles(usersData));
-
 
 // -----------------------------------------------------------------------------
 
