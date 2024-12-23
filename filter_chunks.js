@@ -1,7 +1,27 @@
-// users with incomplete profiles [{username: "alice", profileComplete: true}, {username: "bob", profileComplete: false}] => [{username: "bob", profileComplete: false}]
-const filterIncompleteProfiles = function (users) { };
 
-console.log = function () { }; 
+
+const activeUsers = function (user) {
+  return user.profileComplete;
+};
+
+// const invert = function (f) {
+//   return function (...args) {
+//     return !f(...args);
+//   };
+// };
+
+const filterIncompleteProfiles = function (users) {
+  // const inactiveUsers = invert(activeUsers);
+  return users.filter(function (user) {
+    return !user.profileComplete;
+  });
+};
+// console.log = function () {}
+
+
+const usersData = [{ username: "alice", profileComplete: true }, { username: "bob", profileComplete: false }];
+console.log(filterIncompleteProfiles(usersData));
+
 
 // -----------------------------------------------------------------------------
 
