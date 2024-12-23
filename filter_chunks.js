@@ -1,4 +1,18 @@
+console.log = function () { };
 
+// -----------------------------------------------------------------------------
+
+const filterHighGrades = function (students) {
+  return students.filter(function (student) {
+    return student.grade > 80;
+  });
+};
+
+const students = [{ name: "John", grade: 75 }, { name: "Jane", grade: 85 }];
+console.log(filterHighGrades(students));
+
+
+// -----------------------------------------------------------------------------
 
 const activeUsers = function (user) {
   return user.profileComplete;
@@ -16,7 +30,6 @@ const filterIncompleteProfiles = function (users) {
     return !user.profileComplete;
   });
 };
-// console.log = function () {}
 
 
 const usersData = [{ username: "alice", profileComplete: true }, { username: "bob", profileComplete: false }];
