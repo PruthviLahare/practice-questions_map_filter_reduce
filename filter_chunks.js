@@ -1,32 +1,36 @@
-const isGreaterThan = function (num1) {
-  return function (num2) {
-    return num1 < num2;
-  };
-};
+// users with incomplete profiles [{username: "alice", profileComplete: true}, {username: "bob", profileComplete: false}] => [{username: "bob", profileComplete: false}]
+const filterIncompleteProfiles = function (users) { };
+
+console.log = function () { }; 
+
+// -----------------------------------------------------------------------------
+
+// const isGreaterThan = function (num1) {
+//   return function (num2) {
+//     return num1 < num2;
+//   };
+// };
 
 const filterLongBooks = function (books) {
-  const isGreaterThan200 = isGreaterThan(200);
-
   return books.filter(function (books) {
-    return isGreaterThan200(books.pages);
+    return books.pages > 200;;
   });
 };
 
 const books = [{ title: "Book 1", pages: 150 }, { title: "Book 2", pages: 250 }];
 console.log(filterLongBooks(books));
 
-
 // -----------------------------------------------------------------------------
 
 const filterNumbersGreaterThanTen = function (numbers) {
-  const isGreaterThan10 = isGreaterThan(10);
-  return numbers.filter(isGreaterThan10);
+  return numbers.filter(function (num) {
+    return num > 10;
+  });
 };
 
 const numbers = [5, 12, 7, 18, 3];
 console.log(filterNumbersGreaterThanTen(numbers));
 
-console.log = function () { };
 // -----------------------------------------------------------------------------
 
 // active users [{username: "alice", active: true}, {username: "bob", active: 
@@ -43,10 +47,8 @@ console.log(filterActiveUsers(users));
 // -----------------------------------------------------------------------------
 
 const filterAdults = function (people) {
-  const isGreaterThan30 = isGreaterThan(30);
-
   return people.filter(function (person) {
-    return isGreaterThan30(person.age);
+    return person.age > 30;
   });
 };
 
@@ -55,12 +57,14 @@ console.log(filterAdults(people));
 
 // -----------------------------------------------------------------------------
 
-const lengthGreaterThan5 = function (word) {
-  return word.length > 5;
-};
+// const lengthGreaterThan5 = function (word) {
+//   return word.length > 5;
+// };
 
 const filterLongWords = function (words) {
-  return words.filter(lengthGreaterThan5);
+  return words.filter(function (word) {
+    return word.length > 5;
+  });
 };
 
 const words = ["apple", "banana", "kiwi", "grape"];
