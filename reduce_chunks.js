@@ -92,24 +92,15 @@ const concatenateNames = function (names) {
   return names.reduce((previous, current) => previous + current, "");
 };
 
-const countVowels = function (noOfVowels, letters) {
-  return letters.reduce();
+const countVowels = function (noOfVowels, letter) {
+  return "aeiou".includes(letter) ? noOfVowels + 1 : noOfVowels;
 };
 
 const countVowelsInWords = function (words) {
-  return sumOf(
-    words.map(([...word]) =>
-      word.reduce((init, letter) => {
-        if ("aeiou".includes(letter)) {
-          return init + 1;
-        }
-        return init;
-      }, 0)
-    )
-  );
+  return sumOf(words.map(([...word]) => word.reduce(countVowels, 0)));
 };
 
 const numbers = [1, 2, 3, 4];
-const words = ["hello", "world"];
+const words = ["hello", "world", "ee"];
 
 console.log(countVowelsInWords(words));
