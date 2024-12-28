@@ -100,7 +100,25 @@ const countVowelsInWords = function (words) {
   return sumOf(words.map(([...word]) => word.reduce(countVowels, 0)));
 };
 
-const numbers = [1, 2, 3, 4];
-const words = ["hello", "world", "ee"];
+const makeCamelCase = function (words) {
+  return words.reduce(
+    (str, current) =>
+      str + current.at(0).toUpperCase() + current.slice(1, current.length)
+  );
+};
 
-console.log(countVowelsInWords(words));
+const reverse = function (p, c) {
+  return c + p;
+};
+
+const reverseString = function (words) {
+  return concatenateNames(words.map(([...word]) => word.reduce(reverse, "")));
+};
+
+// duplicateNumbers([1, 2, 3]) => [1, 1, 2, 2, 3, 3]
+const duplicateNumbers = function (numbers) {};
+
+const numbers = [1, 2, 3, 4];
+const words = ["apple", "banana", "cherry"];
+
+console.log(reverseString(words));
