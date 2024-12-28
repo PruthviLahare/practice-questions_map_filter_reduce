@@ -1,5 +1,5 @@
 // reverse arrays of [[1, 2, 3], [4, 5, 6]] => [[3, 2, 1], [6, 5, 4]]
-
+// console.log = function () {};
 const reverse = function (array) {
   return array.reverse();
 };
@@ -212,7 +212,7 @@ const squareMapper = function (number) {
   return Math.pow(number, 2);
 };
 
-const squaresOf = function (numbers) {
+export const squaresOf = function (numbers) {
   return numbers.map(squareMapper);
 };
 
