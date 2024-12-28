@@ -1,3 +1,4 @@
+import { filterEvenNumbers } from "./filter_chunks.js";
 import { squaresOf } from "./map_chunks.js";
 import { isOdd } from "/Users/pruthvilahare/workspace/generic_use/maths_library.js";
 
@@ -53,8 +54,23 @@ const countNegativeNumbers = function (numbers) {
   }, 0);
 };
 
-// findSumOfEvenSquares([1, 2, 3, 4]) => 20
-const findSumOfEvenSquares = function (numbers) {};
+const findSumOfEvenSquares = function (numbers) {
+  const evenList = filterEvenNumbers(numbers);
 
-const numbers = [1, -2, 3, -4, 0, -8];
-console.log(countNegativeNumbers(numbers));
+  return sumOf(squaresOf(evenList));
+};
+
+const concatenateWords = function (words) {
+  return words.reduce((str, word) => str + word, "");
+};
+
+// longestWord(["apple", "banana", "cherry", "kiwi"]) => "banana"
+const longestWord = function (words) {
+  return words.reduce((longest, current) => {
+    return current.length > longest.length ? current : longest;
+  }, "");
+};
+
+const numbers = [1, 2, 3, 4];
+const words = ["apple", "banana", "cherry", "kiwi"];
+console.log(longestWord(words));

@@ -338,7 +338,7 @@ console.log(filterLongWords(words));
 
 // -----------------------------------------------------------------------------
 
-const filterEvenNumbers = function (numbers) {
+export const filterEvenNumbers = function (numbers) {
   return numbers.filter(isEven);
 };
 // const numbers = [1, 2, 3, 4, 5];
