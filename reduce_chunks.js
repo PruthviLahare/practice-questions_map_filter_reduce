@@ -47,8 +47,14 @@ const sumOfOddNumbers = function (numbers) {
   return sumOf(oddList);
 };
 
-// countNegativeNumbers([1, -2, 3, -4]) => 2
-const countNegativeNumbers = function (numbers) {};
+const countNegativeNumbers = function (numbers) {
+  return numbers.reduce((init, num) => {
+    return num < 0 ? init + 1 : init;
+  }, 0);
+};
 
-const numbers = [1, 2, 3, 4, 5, 1];
-console.log(sumOfOddNumbers(numbers));
+// findSumOfEvenSquares([1, 2, 3, 4]) => 20
+const findSumOfEvenSquares = function (numbers) {};
+
+const numbers = [1, -2, 3, -4, 0, -8];
+console.log(countNegativeNumbers(numbers));
