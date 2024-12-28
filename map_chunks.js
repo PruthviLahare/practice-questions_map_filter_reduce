@@ -8,7 +8,10 @@ const reversedArraysOf = function (arrays) {
   return arrays.map(reverse);
 };
 
-const arrayToRev = [[1, 2, 3], [4, 5, 6]];
+const arrayToRev = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
 
 console.log(reversedArraysOf(arrayToRev));
 
@@ -23,7 +26,7 @@ const createStringSplitter = function (splitWith) {
 };
 
 const vowelCounter = function (array) {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const vowels = ["a", "e", "i", "o", "u"];
 
   const vowelAccumulator = function (count, char) {
     return vowels.includes(char) ? count + 1 : count;
@@ -35,7 +38,7 @@ const vowelCounter = function (array) {
 const countVowelsOf = function ([...strings]) {
   console.log(strings);
 
-  const s = strings.map(createStringSplitter(''));
+  const s = strings.map(createStringSplitter(""));
   return s.map(vowelCounter);
 };
 
@@ -67,13 +70,16 @@ const joinedArraysOf = function (arrayOfArrays) {
   return arrayOfArrays.map(concat);
 };
 
-const arrayToJoin = [["a", "b"], ["c", "d"]];
+const arrayToJoin = [
+  ["a", "b"],
+  ["c", "d"],
+];
 console.log(joinedArraysOf(arrayToJoin));
 
 // -----------------------------------------------------------------------------
 
 const splitWordsOf = function (strings) {
-  return strings.map(createStringSplitter(' '));
+  return strings.map(createStringSplitter(" "));
 };
 
 const wordsToSplit = ["hello world", "goodbye moon"];
@@ -82,7 +88,7 @@ console.log(splitWordsOf(wordsToSplit));
 // -----------------------------------------------------------------------------
 
 const domainNameMapper = function (email) {
-  const sliceFrom = email.indexOf('@') + 1;
+  const sliceFrom = email.indexOf("@") + 1;
 
   return email.slice(sliceFrom, email.length);
 };
@@ -123,7 +129,7 @@ console.log(negatedBooleansOf(booleans));
 // -----------------------------------------------------------------------------
 
 const convertToArray = function (string) {
-  return [...string].map(duplicateStr).join('');
+  return [...string].map(duplicateStr).join("");
 };
 
 const doubleLettersOf = function (strings) {
@@ -173,7 +179,6 @@ const firstCharactersOf = function (strings) {
 
 const words = ["apple", "banana", "kiwi"];
 console.log(firstCharactersOf(words));
-
 
 // -----------------------------------------------------------------------------
 

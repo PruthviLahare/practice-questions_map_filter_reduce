@@ -1,3 +1,76 @@
+// orders that exceed the average order value [{orderId: 1, amount: 20}, {orderId: 2, amount: 50}, {orderId: 3, amount: 10}] => [{orderId: 2, amount: 50}]
+const filterHighValueOrders = function (orders) {};
+
+const orders = [
+  { orderId: 1, amount: 20 },
+  { orderId: 2, amount: 50 },
+  { orderId: 3, amount: 10 },
+];
+
+console.log(filterHighValueOrders(orders));
+
+// -----------------------------------------------------------------------------
+
+const filterBirthdaysThisMonth = function (people) {
+  return people.filter((person) => person.birthDate.slice(5, 7) === "12");
+};
+
+const birthDates = [
+  { name: "Alice", birthDate: "2024-12-01" },
+  { name: "Bob", birthDate: "2024-11-01" },
+];
+
+console.log(filterBirthdaysThisMonth(birthDates));
+
+console.log = function () {};
+// -----------------------------------------------------------------------------
+
+const filterStudentsWithAllSubjectsPassed = function (students) {
+  return students.filter((student) =>
+    student.subjects.every((subject) => subject.passed)
+  );
+};
+
+const studentsGrade = [
+  {
+    name: "John",
+    subjects: [
+      { name: "Math", passed: true },
+      { name: "Science", passed: true },
+    ],
+  },
+  {
+    name: "Jane",
+    subjects: [
+      { name: "Math", passed: false },
+      { name: "Science", passed: true },
+    ],
+  },
+];
+
+console.log(filterStudentsWithAllSubjectsPassed(studentsGrade));
+
+// -----------------------------------------------------------------------------
+
+const filterBelowAveragePrice = function (products) {
+  const sumOfPrices = products
+    .map(({ price }) => {
+      return { price };
+    })
+    .reduce((init, { price }) => init + price, 0);
+
+  const avg = sumOfPrices / 3;
+
+  return products.filter(({ price }) => price < avg);
+};
+
+const items = [
+  { name: "item1", price: 10 },
+  { name: "item2", price: 20 },
+  { name: "item3", price: 5 },
+];
+
+console.log(filterBelowAveragePrice(items));
 // -----------------------------------------------------------------------------
 
 const filterInStockProducts = function (products) {
