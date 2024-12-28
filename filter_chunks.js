@@ -4,6 +4,98 @@ import {
   sortList,
 } from "/Users/pruthvilahare/workspace/generic_use/maths_library.js";
 
+console.log = function () {};
+
+// -----------------------------------------------------------------------------
+
+const filterBySalary = function (employees, salary) {
+  return employees.filter((employee) => employee.salary > salary);
+};
+
+const employeesSalary = [
+  { name: "Alice", salary: 5000 },
+  { name: "Bob", salary: 7000 },
+];
+
+console.log(filterBySalary(employeesSalary, 5000));
+
+// -----------------------------------------------------------------------------
+
+const filterByMathGrade = function (students, grade) {
+  return students.filter(({ grades }) => grades.math > grade);
+};
+
+const studentsResult = [
+  { name: "John", grades: { math: 80, science: 90 } },
+  { name: "Jane", grades: { math: 70, science: 85 } },
+];
+
+console.log(filterByMathGrade(studentsResult, 70));
+
+// -----------------------------------------------------------------------------
+
+const filterByPrice = function (products, price) {
+  return products.filter((product) => product.price < price);
+};
+
+const products = [
+  { name: "item1", price: 20 },
+  { name: "item2", price: 50 },
+  { name: "item3", price: 10 },
+];
+console.log(filterByPrice(products, 27));
+
+console.log = function () {};
+// -----------------------------------------------------------------------------
+
+const filterByAge = function (people, greaterThan) {
+  return people.filter(({ age }) => age > greaterThan);
+};
+
+const citizens = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 22 },
+];
+
+console.log(filterByAge(citizens, 27));
+
+console.log = function () {};
+// -----------------------------------------------------------------------------
+
+const filterActiveUsersByPostCount = function (users) {
+  const postCount = users.map((user) => user.postCount);
+
+  const avg = average(postCount);
+  return users.filter(({ postCount }) => postCount > avg);
+};
+
+const postUsers = [
+  { username: "Alice", postCount: 5 },
+  { username: "Bob", postCount: 8 },
+  { username: "Charlie", postCount: 3 },
+];
+console.log(filterActiveUsersByPostCount(postUsers));
+
+// -----------------------------------------------------------------------------
+
+const filterPopularPosts = function (posts) {
+  const likes = posts.map((post) => post.likes);
+  const avg = average(likes);
+
+  return posts.filter(({ likes }) => likes > avg);
+};
+
+const posts = [
+  { postId: 1, likes: 100 },
+  { postId: 2, likes: 200 },
+  { postId: 3, likes: 150 },
+];
+
+console.log(filterPopularPosts(posts));
+
+// -----------------------------------------------------------------------------
+
 const getMedian = function (sorted) {
   const noOfElements = sorted.length;
   const middle = Math.floor(noOfElements / 2);
@@ -31,7 +123,6 @@ const cities = [
 
 console.log(filterCitiesAboveMedianPopulation(cities));
 
-console.log = function () {};
 // -----------------------------------------------------------------------------
 
 const filterHighSalaryEmployees = function (employees) {
@@ -145,10 +236,10 @@ const filterInStockProducts = function (products) {
   return products.filter((product) => product.inStock);
 };
 
-const products = [
-  { product: "apple", inStock: true },
-  { product: "banana", inStock: false },
-];
+// const products = [
+//   { product: "apple", inStock: true },
+//   { product: "banana", inStock: false },
+// ];
 
 console.log(filterInStockProducts(products));
 
