@@ -64,13 +64,23 @@ const concatenateWords = function (words) {
   return words.reduce((str, word) => str + word, "");
 };
 
-// longestWord(["apple", "banana", "cherry", "kiwi"]) => "banana"
 const longestWord = function (words) {
   return words.reduce((longest, current) => {
     return current.length > longest.length ? current : longest;
   }, "");
 };
 
+const shortestWord = function (words) {
+  return words.reduce((shortest, current) => {
+    return current.length < shortest.length ? current : shortest;
+  });
+};
+
+// joinWithComma(["apple", "banana", "cherry"]) => "apple,banana,cherry"
+const joinWithComma = function (words) {
+  return words.reduce((str, current) => str + "," + current);
+};
+
 const numbers = [1, 2, 3, 4];
 const words = ["apple", "banana", "cherry", "kiwi"];
-console.log(longestWord(words));
+console.log(joinWithComma(words));
