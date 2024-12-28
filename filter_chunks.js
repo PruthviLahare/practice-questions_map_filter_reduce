@@ -1,5 +1,53 @@
-// orders that exceed the average order value [{orderId: 1, amount: 20}, {orderId: 2, amount: 50}, {orderId: 3, amount: 10}] => [{orderId: 2, amount: 50}]
-const filterHighValueOrders = function (orders) {};
+const average = function (numbers) {
+  return numbers.reduce((init, number) => init + number, 0) / numbers.length;
+};
+
+// cities with a population higher than the median [{name: "City A", population: 2000}, {name: "City B", population: 5000}, {name: "City C", population: 3000}] => [{name: "City B", population: 5000}]
+const filterCitiesAboveMedianPopulation = function (cities) {};
+
+console.log = function () {};
+// -----------------------------------------------------------------------------
+
+const filterHighSalaryEmployees = function (employees) {
+  const salaries = employees.map((employee) => employee.salary);
+  const avg = average(salaries);
+
+  return employees.filter((employee) => employee.salary > avg);
+};
+
+const employees = [
+  { name: "Alice", salary: 5000, department: "HR" },
+  { name: "Bob", salary: 7000, department: "HR" },
+  { name: "Charlie", salary: 4000, department: "IT" },
+];
+
+console.log(filterHighSalaryEmployees(employees));
+
+// -----------------------------------------------------------------------------
+
+const filterTopRatedBooks = function (books) {
+  const ratings = books.map((book) => book.rating);
+  const avg = average(ratings);
+
+  return books.filter(({ rating }) => rating > avg);
+};
+
+const booksRating = [
+  { title: "Book 1", rating: 4 },
+  { title: "Book 2", rating: 5 },
+  { title: "Book 3", rating: 3 },
+];
+
+console.log(filterTopRatedBooks(booksRating));
+
+// -----------------------------------------------------------------------------
+
+const filterHighValueOrders = function (orders) {
+  const totalAmount = orders.map((order) => order.amount);
+  const avg = average(totalAmount);
+
+  return orders.filter(({ amount }) => amount > avg);
+};
 
 const orders = [
   { orderId: 1, amount: 20 },
@@ -22,7 +70,6 @@ const birthDates = [
 
 console.log(filterBirthdaysThisMonth(birthDates));
 
-console.log = function () {};
 // -----------------------------------------------------------------------------
 
 const filterStudentsWithAllSubjectsPassed = function (students) {
@@ -53,13 +100,8 @@ console.log(filterStudentsWithAllSubjectsPassed(studentsGrade));
 // -----------------------------------------------------------------------------
 
 const filterBelowAveragePrice = function (products) {
-  const sumOfPrices = products
-    .map(({ price }) => {
-      return { price };
-    })
-    .reduce((init, { price }) => init + price, 0);
-
-  const avg = sumOfPrices / 3;
+  const totalAmount = products.map((product) => product.price);
+  const avg = average(totalAmount);
 
   return products.filter(({ price }) => price < avg);
 };
