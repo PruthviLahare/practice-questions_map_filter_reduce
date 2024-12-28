@@ -1,9 +1,35 @@
-const average = function (numbers) {
-  return numbers.reduce((init, number) => init + number, 0) / numbers.length;
+import {
+  isEven,
+  average,
+  sortList,
+} from "/Users/pruthvilahare/workspace/generic_use/maths_library.js";
+
+const getMedian = function (sorted) {
+  const noOfElements = sorted.length;
+  const middle = Math.floor(noOfElements / 2);
+
+  return isEven(noOfElements)
+    ? sorted[middle] + sorted[middle - 1]
+    : sorted[middle];
 };
 
-// cities with a population higher than the median [{name: "City A", population: 2000}, {name: "City B", population: 5000}, {name: "City C", population: 3000}] => [{name: "City B", population: 5000}]
-const filterCitiesAboveMedianPopulation = function (cities) {};
+const filterCitiesAboveMedianPopulation = function (cities) {
+  const population = cities.map((city) => city.population);
+  const sorted = sortList(population);
+
+  const medians = getMedian(sorted);
+
+  return cities.filter(({ population }) => population > medians);
+};
+
+const cities = [
+  { name: "City A", population: 2000 },
+  { name: "City B", population: 5000 },
+  { name: "City C", population: 3000 },
+  // { name: "City C", population: 1000 },
+];
+
+console.log(filterCitiesAboveMedianPopulation(cities));
 
 console.log = function () {};
 // -----------------------------------------------------------------------------
@@ -220,10 +246,6 @@ const words = ["apple", "banana", "kiwi", "grape"];
 console.log(filterLongWords(words));
 
 // -----------------------------------------------------------------------------
-
-const isEven = function (num) {
-  return (num & 1) === 0;
-};
 
 const filterEvenNumbers = function (numbers) {
   return numbers.filter(isEven);
