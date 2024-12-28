@@ -88,9 +88,28 @@ const joinWordsWithSpace = function (words) {
   return words.reduce((previous, current) => previous + " " + current);
 };
 
-// concatenateNames(["John", "Jane", "Doe"]) => "JohnJaneDoe"
-const concatenateNames = function (names) {};
+const concatenateNames = function (names) {
+  return names.reduce((previous, current) => previous + current, "");
+};
+
+const countVowels = function (noOfVowels, letters) {
+  return letters.reduce();
+};
+
+const countVowelsInWords = function (words) {
+  return sumOf(
+    words.map(([...word]) =>
+      word.reduce((init, letter) => {
+        if ("aeiou".includes(letter)) {
+          return init + 1;
+        }
+        return init;
+      }, 0)
+    )
+  );
+};
 
 const numbers = [1, 2, 3, 4];
-const words = ["apple", "banana", "cherry"];
-console.log(joinWordsWithSpace(words));
+const words = ["hello", "world"];
+
+console.log(countVowelsInWords(words));
