@@ -116,9 +116,19 @@ const reverseString = function (words) {
 };
 
 // duplicateNumbers([1, 2, 3]) => [1, 1, 2, 2, 3, 3]
-const duplicateNumbers = function (numbers) {};
+const duplicateNumbers = function (numbers) {
+  return numbers.reduce((list, num) => {
+    list.push(num);
+    list.push(num);
+
+    return list;
+  }, []);
+};
+
+// concatenateArrays([[1, 2], [3, 4], [5, 6]]) => [1, 2, 3, 4, 5, 6]
+const concatenateArrays = function (arrays) {};
 
 const numbers = [1, 2, 3, 4];
 const words = ["apple", "banana", "cherry"];
 
-console.log(reverseString(words));
+console.log(duplicateNumbers(numbers));
