@@ -1,35 +1,30 @@
-// orders placed in the last 30 days [{orderDate: "2024-11-01"}, {orderDate: "2024-12-01"}] => [{orderDate: "2024-12-01"}]
-const filterRecentOrders = function (orders) { };
-
-console.log = function () { };
 // -----------------------------------------------------------------------------
 
 const filterInStockProducts = function (products) {
-  return products.filter(function (product) {
-    return product.inStock;
-  });
+  return products.filter((product) => product.inStock);
 };
 
-const products = [{ product: "apple", inStock: true }, { product: "banana", inStock: false }];
+const products = [
+  { product: "apple", inStock: true },
+  { product: "banana", inStock: false },
+];
 
 console.log(filterInStockProducts(products));
 
 // -----------------------------------------------------------------------------
 
 const filterHighGrades = function (students) {
-  return students.filter(function (student) {
-    return student.grade > 80;
-  });
+  return students.filter((student) => student.grade > 80);
 };
 
-const students = [{ name: "John", grade: 75 }, { name: "Jane", grade: 85 }];
+const students = [
+  { name: "John", grade: 75 },
+  { name: "Jane", grade: 85 },
+];
+
 console.log(filterHighGrades(students));
 
 // -----------------------------------------------------------------------------
-
-const activeUsers = function (user) {
-  return user.profileComplete;
-};
 
 // const invert = function (f) {
 //   return function (...args) {
@@ -38,13 +33,14 @@ const activeUsers = function (user) {
 // };
 
 const filterIncompleteProfiles = function (users) {
-  // const inactiveUsers = invert(activeUsers);
-  return users.filter(function (user) {
-    return !user.profileComplete;
-  });
+  return users.filter((user) => !user.profileComplete);
 };
 
-const usersData = [{ username: "alice", profileComplete: true }, { username: "bob", profileComplete: false }];
+const usersData = [
+  { username: "alice", profileComplete: true },
+  { username: "bob", profileComplete: false },
+];
+
 console.log(filterIncompleteProfiles(usersData));
 
 // -----------------------------------------------------------------------------
@@ -56,20 +52,19 @@ console.log(filterIncompleteProfiles(usersData));
 // };
 
 const filterLongBooks = function (books) {
-  return books.filter(function (books) {
-    return books.pages > 200;;
-  });
+  return books.filter((books) => books.pages > 200);
 };
 
-const books = [{ title: "Book 1", pages: 150 }, { title: "Book 2", pages: 250 }];
+const books = [
+  { title: "Book 1", pages: 150 },
+  { title: "Book 2", pages: 250 },
+];
 console.log(filterLongBooks(books));
 
 // -----------------------------------------------------------------------------
 
 const filterNumbersGreaterThanTen = function (numbers) {
-  return numbers.filter(function (num) {
-    return num > 10;
-  });
+  return numbers.filter((num) => num > 10);
 };
 
 const numbers = [5, 12, 7, 18, 3];
@@ -77,38 +72,33 @@ console.log(filterNumbersGreaterThanTen(numbers));
 
 // -----------------------------------------------------------------------------
 
-// active users [{username: "alice", active: true}, {username: "bob", active: 
-//false}] => [{username: "alice", active: true}]
-
 const filterActiveUsers = function (users) {
   return users.filter((user) => user.active);
 };
 
-const users = [{ username: "alice", active: true }, { username: "bob", active: false }];
+const users = [
+  { username: "alice", active: true },
+  { username: "bob", active: false },
+];
 
 console.log(filterActiveUsers(users));
 
 // -----------------------------------------------------------------------------
 
 const filterAdults = function (people) {
-  return people.filter(function (person) {
-    return person.age > 30;
-  });
+  return people.filter((person) => person.age > 30);
 };
 
-const people = [{ name: "Alice", age: 25 }, { name: "Bob", age: 35 }];
+const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 35 },
+];
 console.log(filterAdults(people));
 
 // -----------------------------------------------------------------------------
 
-// const lengthGreaterThan5 = function (word) {
-//   return word.length > 5;
-// };
-
 const filterLongWords = function (words) {
-  return words.filter(function (word) {
-    return word.length > 5;
-  });
+  return words.filter((word) => word.length > 5);
 };
 
 const words = ["apple", "banana", "kiwi", "grape"];
